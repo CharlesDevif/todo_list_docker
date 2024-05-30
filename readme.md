@@ -28,20 +28,11 @@ Avant de commencer, assurez-vous d'avoir les outils suivants installés sur votr
 
 ## Installation
 
-1. Clonez le dépôt :
+ Clonez le dépôt :
 
     ```sh
-    git clone https://github.com/votre-utilisateur/votre-repo.git
+    git clone https://github.com/CharlesDevif/todo_list_docker.git
     cd votre-repo
-    ```
-
-2. Installez les dépendances pour le backend et le frontend :
-
-    ```sh
-    cd backend
-    npm install
-    cd ../frontend
-    npm install
     ```
 
 ## Démarrage
