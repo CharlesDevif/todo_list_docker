@@ -1,0 +1,143 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f1f3f4;
+    font-family: 'Arial', sans-serif;
+    color: #202124;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+input {
+    background: #ffffff;
+    outline: none;
+    border: 1px solid #1a73e8;
+    padding: 15px 10px;
+    width: 25%;
+    height: 20px;
+    border-radius: 5px;
+    margin: 10px;
+    font-weight: 700;
+    font-family: 'Arial', sans-serif;
+}
+
+#inputBtn {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 40px;
+    color: #ffffff;
+    font-weight: 700;
+    background: #1a73e8;
+    transition: background 0.3s;
+}
+
+#inputBtn:hover {
+    background: #174ea6;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1a73e8;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#brandName {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 0 15px;
+    display: inline-block;
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.Cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff;
+    color: #202124;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.Card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Card h2, .Card h3 {
+    margin: 20px 0;
+}
+
+button {
+    display: block;
+}
+
+.btn {
+    font-size: 1.2rem;
+    color: #ffffff;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #1a73e8;
+    border: none;
+    outline: none;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 700;
+    font-family: 'Arial', sans-serif;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #174ea6;
+}
