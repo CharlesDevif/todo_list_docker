@@ -12,8 +12,8 @@ export default class TodoController {
   async createTodo(req: Request, res: Response): Promise<void> {
     try {
       const { name } = req.body;
-      if (!name) {
-        res.status(400).json({ error: 'Name is required' });
+      if (typeof name !== 'string' || !name.trim()) {
+        res.status(400).json({ error: 'Invalid or missing "name"' });
         return;
       }
       const id = await this.todoModel.createTodo(name);
@@ -28,12 +28,13 @@ export default class TodoController {
       const { id } = req.params;
       const { completed } = req.body;
       
-      if (typeof completed !== 'boolean') {
-         res.status(400).json({ error: 'Invalid request, "completed" must be a boolean' });
+      if (typeof id !== 'string' || isNaN(Number(id))) {
+        res.status(400).json({ error: 'Invalid or missing "id"' });
+        return;
       }
       
-      if (!id) {
-        res.status(400).json({ error: 'ID is required' });
+      if (typeof completed !== 'boolean') {
+        res.status(400).json({ error: 'Invalid request, "completed" must be a boolean' });
         return;
       }
       
@@ -47,8 +48,8 @@ export default class TodoController {
   async deleteTodo(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params;
-      if (!id) {
-        res.status(400).json({ error: 'ID is required' });
+      if (typeof id !== 'string' || isNaN(Number(id))) {
+        res.status(400).json({ error: 'Invalid or missing "id"' });
         return;
       }
       await this.todoModel.deleteTodo(Number(id));
@@ -70,8 +71,8 @@ export default class TodoController {
   async getTodoById(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params;
-      if (!id) {
-        res.status(400).json({ error: 'ID is required' });
+      if (typeof id !== 'string' || isNaN(Number(id))) {
+        res.status(400).json({ error: 'Invalid or missing "id"' });
         return;
       }
       const todo = await this.todoModel.getTodoById(Number(id));
