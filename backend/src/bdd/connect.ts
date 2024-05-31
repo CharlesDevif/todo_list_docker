@@ -4,7 +4,7 @@ import { IDB } from '../interfaces/db';
 
 dotenv.config();
 
-class DB implements IDB {
+export default class DB implements IDB {
   private pool: Pool;
   private connection: PoolConnection | null = null;
 
@@ -57,4 +57,4 @@ class DB implements IDB {
   }
 }
 
-export default DB;
+

@@ -5,12 +5,10 @@ import DB from './bdd/connect';
 import todoRoute from './router/todoRoute';
 import { IDB } from './interfaces/db';
 
-// Charger les variables d'environnement
 dotenv.config();
 
-// Création de l'application Express
 const app = express();
-const dbInstance: IDB = new DB();  // Créez une instance de la classe DB
+const dbInstance: IDB = new DB();
 
 // Configuration de CORS
 app.use(cors());
